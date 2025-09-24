@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Dashboard</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    body {
+      transition: background 1s ease; /* smooth background transition */
+      background: #f8f9fa;
+    }
+    .weather-card {
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.6s ease;
+      color: #fff;
+    }
+    .forecast-card {
+      border-radius: 8px;
+      background: #ffffff;
+      transition: all 0.6s ease;
+      color: #fff;
+    }
+    .forecast-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+    .weather-icon { width: 70px; }
+    #searchHistory button {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-4">
+    <h1 class="text-center mb-4">🌦️ Weather Dashboard</h1>
+
+    <!-- Search bar + Unit toggle -->
+    <div class="row mb-2">
+      <div class="col-md-8 offset-md-2 d-flex">
+        <div class="input-group me-2">
+          <input type="text" id="cityInput" class="form-control" placeholder="Enter city name"/>
+          <button id="searchBtn" class="btn btn-primary">Search</button>
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" id="celsiusBtn" class="btn btn-outline-secondary">°C</button>
+          <button type="button" id="fahrenheitBtn" class="btn btn-outline-secondary">°F</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search History -->
+    <div class="row mb-4">
+      <div class="col-md-8 offset-md-2">
+        <h5>Recent Searches</h5>
+        <div id="searchHistory" class="d-flex flex-wrap gap-2"></div>
+      </div>
+    </div>
+
+    <!-- Current Weather -->
+    <div id="currentWeather" class="mb-4"></div>
+
+    <!-- Forecast -->
+    <h3 class="mb-3">5-Day Forecast</h3>
+    <div id="forecast" class="row g-3"></div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
